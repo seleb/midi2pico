@@ -982,6 +982,13 @@ else
 	outfile=io.stdout
 end
 if not opts.musichax then
+	outfile:write("pico-8 cartridge // http://www.pico-8.com\n")
+	outfile:write("version 8\n")
+	outfile:write("__lua__\n")
+	outfile:write("function _init()\n music()\nend\n\nfunction _update()\nend\n\n")
+	outfile:write("__gfx__\n")
+	outfile:write("__gff__\n")
+	outfile:write("__map__\n")
 	outfile:write("__sfx__\n")
 end
 local base=0
